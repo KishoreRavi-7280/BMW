@@ -15,63 +15,74 @@ body{
     font-family: "Roboto Serif", serif;
 } 
 
-header{
+/* Header */
+
+header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 10px 100px;
+    align-items: center;
+    padding: 30px 100px;
     z-index: 1000;
 }
-header::after{
+
+header::after {
     position: absolute;
     content: '';
-    top: 20%;
+    top: 50%;
     transform: translateY(-50%);
     left: 100px;
     height: 5px;
     width: 40%;
-    background: var(--primary);
-
+    background: linear-gradient(90deg, var(--primary), transparent);
 }
-.logo{
+
+.logo {
     font-size: 30px;
     color: #ffffff;
 }
-.logo img{
+
+.logo img {
+    position: absolute;
+    top:10px;
+    right: 50%;
+    left: 47%;
     max-width: 200px;
     filter: invert(1);
-    position: absolute;
-    left: 50%;
-    top: 0;
 }
-header .year{
-    font-family: 'Racing sans one', sans-serif;
+
+header .year {
+    position: absolute;
+    top: 0;
+    font-family: 'Racing Sans One', cursive;
     font-size: 1rem;
     color: #ffffff;
     letter-spacing: 1px;
     font-weight: 800;
     margin-top: 40px;
+   
 }
-header .menu{
-    position: relative;
+
+header .menu {
+    position: absolute;
+    left: 90%;
+    right: 0;
     height: 30px;
     width: 30px;
-    background: url(../images/menu\ bar.png) no-repeat;
-    background-size: 30px;
-    background-position: center;
+    background: url("../images/menu bar.png") no-repeat center;
+    background-size: 20px;
+    filter: invert(1);
     cursor: pointer;
-    color: white;
 }
-header .menu.active{
-    position: relative;
+
+header .menu.active {
     height: 35px;
     width: 35px;
-    background: url(../images/crossline\ menu.png) no-repeat;
-    background-size: 35px;
-    background-position: center;
+    background: url("../images/crossline\ menu.png") no-repeat center;
+    background-size: 20px;
     filter: invert(1);
     cursor: pointer;
 }
@@ -386,141 +397,3 @@ header .menu.active{
     letter-spacing: 1px;
 }
 
- /* Responsive Design */
-
-/* ...existing code... */
-
-/* Responsive Design */
-
-/* Small devices (phones, portrait) */
-@media (max-width: 600px) {
-    .banner {
-        padding: 20px;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .banner .content {
-        max-width: 100%;
-        padding-bottom: 20px;
-    }
-    .nav {
-        width: 95%;
-        right: 2.5%;
-    }
-    .banner .gallery {
-        width: 100%;
-        left: 0;
-        bottom: 10px;
-    }
-    .banner .screen {
-        display: none;
-    }
-    .trailer {
-        display: none !important;
-    }
-    
-}
-
-/* Medium devices (tablets) */
-@media (min-width: 601px) and (max-width: 1024px) {
-    .logo{
-        position: relative;
-        left: 20%;
-        right: 20%;
-    }
-    .banner {
-        padding: 40px;
-        padding-left: 0;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: justify;
-    }
-    .banner .gallery {
-        width: 80%;
-        left: 10%;
-    }
-    .banner .screen {
-        display: none;
-    }
-    .trailer {
-        display: none !important;
-    }
-} 
-
-/* Large devices (laptops/desktops) */
-@media (min-width: 1025px) {
-    .banner {
-        padding: 0 100px;
-        flex-direction: row;
-        align-items: center;
-        text-align: left;
-    }
-    .banner .gallery {
-        width: 55%;
-        left: 100px;
-    }
-    .banner .screen {
-        display: block;
-    }
-    .trailer {
-        display: block;
-    }
-}
-/* ...existing code... */
-
-
-
-/*@media(max-width:600px){
-    header{
-        padding: 20px 50px;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap:5px;
-    }
-    header::after{
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: var(--primary);
-    }
-
-    .logo{
-        margin-top: 10px;
-    }
-    
-    .nav{
-        right: 0;
-        width: 100%;
-    }
-    .nav.active{
-        right: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-    .banner{
-        padding: 50px 30px 100px;
-    }
-    .banner .content h1{
-        font-size: 5rem;
-    }
-
-    .banner .content .model{
-        font-size: 2rem;
-    }
-    .banner .content a{
-        width: 150px;
-        padding: 10px 30px;
-    }
-    .banner .screen{
-        display: none;
-    }
-    .banner .gallery{
-        width: 100%;
-        left:0;
-    }
-}*/

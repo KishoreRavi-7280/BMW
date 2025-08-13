@@ -2,10 +2,8 @@
 function toggleMenu() {
     const menu = document.querySelector('.menu');
     const nav = document.querySelector('.nav');
-    if (menu && nav) {
-        menu.classList.toggle('active');
-        nav.classList.toggle('active');
-    }
+    menu.classList.toggle('active');
+    nav.classList.toggle('active');
 }
 
 // Change the background video when clicking on the gallery
