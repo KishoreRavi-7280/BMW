@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles/style.css" type="text/css">
     <link rel="stylesheet" href="/styles/media.css" type="text/css">
     <link rel="stylesheet" href="/styles/cards.css" type="text/css">
+    <link rel="stylesheet" href="/styles/slide1.css" type="text/css">
+    <link rel="stylesheet" href="/styles/Booking.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
 </head>
@@ -19,23 +21,19 @@
    <header>
     <span class="year">2023 - 2025</span>
     <a href="#" class="logo"><img src="images/logo.png" alt="Logo"></a>
-    <a href="#" class="menu active" onclick="toggleMenu();"></a>
+    <a href="#" class="menu " onclick="toggleMenu();"></a>
   </header>
 
-
-         
-   
-
+  <!--Banner-->
     <div class="banner">
 
          <!-- Navigation -->
 
-        <ul class="nav active">
+        <ul class="nav">
             <li><a href="#">Supercars</a></li>
-            <li><a href="#">M series</a></li>
-            <li><a href="#">X series</a></li>
-            <li><a href="#">M competition</a></li>
-            <li><a href="#">X</a></li>
+            <li><a href="#m-series">M-series</a></li>
+            <li><a href="#x-series">X-series</a></li>
+            <li><a href="#Booking">Booking</a></li>
         </ul>
         <!-- bg-video -->
 
@@ -69,12 +67,12 @@
              muted
              ></video>
                <video
-            class="bg-video bmw-5"
+             class="bg-video bmw-5"
              src="./asset/bmw-5.mp4"
              autoplay
              loop
              muted
-             ></video>
+             ></video> 
         </div>
 
         <!-- contents -->
@@ -82,9 +80,9 @@
             <h1>BMW </h1>
             <h3 class="model bmw-2 active" style="color:#ADD8E6">M3 e39</h3>
             <h3 class="model bmw-1" style="color:#4F738E ;">M5 Competition</h3>
-            <h3 class="model bmw-4" style="color: #080808;">M5 F90</h3>
-            <h3 class="model bmw-5" style="color: #112a12;">BMW M8</h3>
-            <h3 class="model bmw-6" style="color: #bcc6cc;">BMW M5 Hurrican RR</h3>
+            <h3 class="model bmw-3" style="color: #080808;">M5 F90</h3>
+            <h3 class="model bmw-4" style="color: #112a12;">BMW M8</h3>
+            <h3 class="model bmw-5" style="color: #bcc6cc;">BMW M5 Hurrican RR</h3>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit<br> Dicta, tempore.</p>
             <a href="#">Enquire</a>
          </div>
@@ -200,22 +198,151 @@
             </div>
     </div>
    
-</div ><!--home-->
+</div >
+     </div><!--home-->
 
 
-        <!-- CARDS -->
-     
+<div class="body" id="m-series">
+        <!-- CARDS M-series-->
+     <div class="slider">
+        <!-- list Items -->
+        <div class="list">
+            <div class="item active">
+                <img src="image/img1.png">
+                <div class="content">
+                    <p>design</p>
+                    <h2>Slider 01</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img2.jpg">
+                <div class="content">
+                    <p>design</p>
+                    <h2>Slider 02</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img3.jpg">
+                <div class="content">
+                    <p>design</p>
+                    <h2>Slider 03</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img4.jpg">
+                <div class="content">
+                    <p>design</p>
+                    <h2>Slider 04</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img5.jpg">
+                <div class="content">
+                    <p>design</p>
+                    <h2>Slider 05</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, neque?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- button arrows -->
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+        <!-- thumbnail -->
+        <div class="thumbnail">
+            <div class="item active">
+                <img src="image/img1.png">
+                <div class="content">
+                    Name Slider
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img2.jpg">
+                <div class="content">
+                    Name Slider
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img3.jpg">
+                <div class="content">
+                    Name Slider
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img4.jpg">
+                <div class="content">
+                    Name Slider
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img5.jpg">
+                <div class="content">
+                    Name Slider
+                </div>
+            </div>
+        </div>
+    </div>
+
+ </div>
+        <!-- End of cards -->
+
+        <!-- Cards X-series -->
+<div class="body1" id="x-series">
+
+    </div> <!--End of cards X-series-->
+
+
+
+   <!-- Booking -->
     
-
-
-        <!-- END OF CARDS -->
-
+   <!--End of booking-->
 
 
 
 
 
-            <!-- scripts -->
+</div> <!--End of container-->
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- scripts -->
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script defer src="/js/car.js"></script>
@@ -224,9 +351,12 @@
                 $('.carousel').carousel();
             });
         </script>
+        <!--Booking Script-->
+        <script defer src="/js/Booking.js"></script>
 
         <!-- card script -->
          <script defer src="/js/card.js"></script>
+         <script defer src="/js/s"></script>
 
 
 

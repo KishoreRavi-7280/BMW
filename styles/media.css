@@ -71,6 +71,8 @@
     .banner .content {
         position: relative;
         padding: 50px 0 100px;
+        bottom:50px;
+        
     }
 
     .banner .content h1 {
@@ -80,7 +82,7 @@
         font-size: 4rem;
     }
     .banner .content p{
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .banner .content .model {
         font-size: 2.5rem;
@@ -100,9 +102,10 @@
         height: 43%;
     }
     .banner .gallery {
-       width: 100%;
-       left: 0;
-       height: 320px;
+       top: 73.3%;
+        width: 100%;
+        left: 0;
+       /* height: 320px; */
     }
 
     .carousel .carousel-item {
