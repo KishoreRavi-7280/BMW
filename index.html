@@ -6,19 +6,20 @@
     <title>Bmw</title>
     <link rel="stylesheet" href="styles/style.css" type="text/css">
     <link rel="stylesheet" href="/styles/media.css" type="text/css">
+    <link rel="stylesheet" href="/styles/cards.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" integrity="sha384-tViUnnbYAV00FLIhhi3v/dWt3Jxw4gZQcNoSCxCIFNJVCx7/D55/wXsrNIRANwdD" crossorigin="anonymous">
 </head>
 <body>
     
      
-  
+  <div class="home">
   <!-- header -->
          
    <header>
     <span class="year">2023 - 2025</span>
     <a href="#" class="logo"><img src="images/logo.png" alt="Logo"></a>
-    <a href="#" class="menu" onclick="toggleMenu();"></a>
+    <a href="#" class="menu active" onclick="toggleMenu();"></a>
   </header>
 
 
@@ -29,7 +30,7 @@
 
          <!-- Navigation -->
 
-        <ul class="nav">
+        <ul class="nav active">
             <li><a href="#">Supercars</a></li>
             <li><a href="#">M series</a></li>
             <li><a href="#">X series</a></li>
@@ -84,7 +85,7 @@
             <h3 class="model bmw-4" style="color: #080808;">M5 F90</h3>
             <h3 class="model bmw-5" style="color: #112a12;">BMW M8</h3>
             <h3 class="model bmw-6" style="color: #bcc6cc;">BMW M5 Hurrican RR</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.,<br> Dicta, tempore.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit<br> Dicta, tempore.</p>
             <a href="#">Enquire</a>
          </div>
 
@@ -199,71 +200,38 @@
             </div>
     </div>
    
+</div ><!--home-->
+
+
+        <!-- CARDS -->
+     
+    
+
+
+        <!-- END OF CARDS -->
+
+
+
+
+
+
             <!-- scripts -->
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script defer src="js/car.js"></script>
+        <script defer src="/js/car.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
                 $('.carousel').carousel();
             });
         </script>
 
+        <!-- card script -->
+         <script defer src="/js/card.js"></script>
 
 
-        <!-- carousel -->
-<!-- 
-        <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const carousel = document.querySelector(".carousel");
-    let isDown = false;
-    let startX;
-    let scrollLeft;
 
-    if (carousel) {
-        // Enable horizontal scroll via touch / mouse
-        carousel.addEventListener("mousedown", (e) => {
-            isDown = true;
-            carousel.classList.add("active");
-            startX = e.pageX - carousel.offsetLeft;
-            scrollLeft = carousel.scrollLeft;
-        });
+       
 
-        carousel.addEventListener("mouseleave", () => {
-            isDown = false;
-            carousel.classList.remove("active");
-        });
-
-        carousel.addEventListener("mouseup", () => {
-            isDown = false;
-            carousel.classList.remove("active");
-        });
-
-        carousel.addEventListener("mousemove", (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - carousel.offsetLeft;
-            const walk = (x - startX) * 2; // scroll speed
-            carousel.scrollLeft = scrollLeft - walk;
-        });
-
-        // Touch support
-        let touchStartX = 0;
-        let touchScrollLeft = 0;
-
-        carousel.addEventListener("touchstart", (e) => {
-            touchStartX = e.touches[0].pageX;
-            touchScrollLeft = carousel.scrollLeft;
-        });
-
-        carousel.addEventListener("touchmove", (e) => {
-            const x = e.touches[0].pageX;
-            const walk = (x - touchStartX) * 2;
-            carousel.scrollLeft = touchScrollLeft - walk;
-        });
-    }
-});
-</script> -->
 
 </body>
 </html>
