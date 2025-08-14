@@ -6,7 +6,10 @@
     header::after {
         display: none;
     }
-
+    header .menu{
+        position: fixed;
+        top: 0;
+    }
     /* Center logo */
     .logo img {
         position: relative;

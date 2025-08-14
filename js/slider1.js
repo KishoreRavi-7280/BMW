@@ -1,57 +1,68 @@
-let galleryItems = document.querySelectorAll('.gallery-slider .gallery-list .gallery-slide');
-let galleryNext = document.getElementById('gallery-next');
-let galleryPrev = document.getElementById('gallery-prev');
-let galleryThumbs = document.querySelectorAll('.gallery-thumbs .gallery-thumb');
+let carSlides = document.querySelectorAll('.car-slider .car-slide-track .car-slide');
+let carNext = document.getElementById('car-next');
+let carPrev = document.getElementById('car-prev');
+let carThumbs = document.querySelectorAll('.car-slider-thumbnails .car-thumb');
 
-let galleryCount = galleryItems.length;
-let galleryIndex = 0;
+// config params
+let totalCarSlides = carSlides.length;
+let carActiveIndex = 0;
 
-galleryNext.onclick = function () {
-    galleryIndex++;
-    if (galleryIndex >= galleryCount) {
-        galleryIndex = 0;
+// Next button
+carNext.onclick = function () {
+    carActiveIndex++;
+    if (carActiveIndex >= totalCarSlides) {
+        carActiveIndex = 0;
     }
-    showGallerySlide();
+    showCarSlide();
 };
 
-galleryPrev.onclick = function () {
-    galleryIndex--;
-    if (galleryIndex < 0) {
-        galleryIndex = galleryCount - 1;
+// Prev button
+carPrev.onclick = function () {
+    carActiveIndex--;
+    if (carActiveIndex < 0) {
+        carActiveIndex = totalCarSlides - 1;
     }
-    showGallerySlide();
+    showCarSlide();
 };
 
-let galleryInterval = setInterval(() => {
-    galleryNext.click();
-}, 5000);
+// Auto run slider
+let carAutoPlay = setInterval(() => {
+    carNext.click();
+}, 10000);
 
-function showGallerySlide() {
-    document.querySelector('.gallery-slider .gallery-list .gallery-slide.gallery-active').classList.remove('gallery-active');
-    document.querySelector('.gallery-thumbs .gallery-thumb.gallery-active').classList.remove('gallery-active');
+// Show slide function
+function showCarSlide() {
+    // Remove old active
+    document.querySelector('.car-slide.active').classList.remove('active');
+    document.querySelector('.car-thumb.active').classList.remove('active');
 
-    galleryItems[galleryIndex].classList.add('gallery-active');
-    galleryThumbs[galleryIndex].classList.add('gallery-active');
+    // Add new active
+    carSlides[carActiveIndex].classList.add('active');
+    carThumbs[carActiveIndex].classList.add('active');
 
-    adjustGalleryThumbPosition();
+    // Scroll to active thumbnail if needed
+    setCarThumbPosition();
 
-    clearInterval(galleryInterval);
-    galleryInterval = setInterval(() => {
-        galleryNext.click();
+    // Reset autoplay
+    clearInterval(carAutoPlay);
+    carAutoPlay = setInterval(() => {
+        carNext.click();
     }, 5000);
 }
 
-function adjustGalleryThumbPosition() {
-    let activeThumb = document.querySelector('.gallery-thumbs .gallery-thumb.gallery-active');
+// Keep active thumbnail in view
+function setCarThumbPosition() {
+    let activeThumb = document.querySelector('.car-thumb.active');
     let rect = activeThumb.getBoundingClientRect();
     if (rect.left < 0 || rect.right > window.innerWidth) {
         activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'nearest' });
     }
 }
 
-galleryThumbs.forEach((thumb, index) => {
+// Thumbnail click event
+carThumbs.forEach((thumb, index) => {
     thumb.addEventListener('click', () => {
-        galleryIndex = index;
-        showGallerySlide();
+        carActiveIndex = index;
+        showCarSlide();
     });
 });

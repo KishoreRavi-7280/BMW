@@ -30,9 +30,9 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    background-image: linear-gradient(
+    /* background-image: linear-gradient(
         to top, #000 40%, transparent
-    );
+    ); */
 }
 .slider .list .item .content{
     position: absolute;
@@ -99,7 +99,7 @@
 }
 .thumbnail{
     position: absolute;
-    top: 120%;
+    top:111%;
     z-index: 11;
     display: flex;
     gap: 10px;
