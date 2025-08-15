@@ -1,68 +1,41 @@
-let carSlides = document.querySelectorAll('.car-slider .car-slide-track .car-slide');
-let carNext = document.getElementById('car-next');
-let carPrev = document.getElementById('car-prev');
-let carThumbs = document.querySelectorAll('.car-slider-thumbnails .car-thumb');
+const bmwTrack = document.querySelector(".bmw-slider-track");
+const bmwPrev = document.querySelector(".bmw-prev");
+const bmwNext = document.querySelector(".bmw-next");
 
-// config params
-let totalCarSlides = carSlides.length;
-let carActiveIndex = 0;
+let bmwIndex = 0;
+const bmwSlides = document.querySelectorAll(".bmw-slide");
+const bmwSlideWidth = bmwSlides[0].offsetWidth + 40; // includes margin
 
-// Next button
-carNext.onclick = function () {
-    carActiveIndex++;
-    if (carActiveIndex >= totalCarSlides) {
-        carActiveIndex = 0;
-    }
-    showCarSlide();
-};
-
-// Prev button
-carPrev.onclick = function () {
-    carActiveIndex--;
-    if (carActiveIndex < 0) {
-        carActiveIndex = totalCarSlides - 1;
-    }
-    showCarSlide();
-};
-
-// Auto run slider
-let carAutoPlay = setInterval(() => {
-    carNext.click();
-}, 10000);
-
-// Show slide function
-function showCarSlide() {
-    // Remove old active
-    document.querySelector('.car-slide.active').classList.remove('active');
-    document.querySelector('.car-thumb.active').classList.remove('active');
-
-    // Add new active
-    carSlides[carActiveIndex].classList.add('active');
-    carThumbs[carActiveIndex].classList.add('active');
-
-    // Scroll to active thumbnail if needed
-    setCarThumbPosition();
-
-    // Reset autoplay
-    clearInterval(carAutoPlay);
-    carAutoPlay = setInterval(() => {
-        carNext.click();
-    }, 5000);
+function bmwUpdateSlider() {
+    bmwTrack.style.transform = `translateX(-${bmwIndex * bmwSlideWidth}px)`;
 }
 
-// Keep active thumbnail in view
-function setCarThumbPosition() {
-    let activeThumb = document.querySelector('.car-thumb.active');
-    let rect = activeThumb.getBoundingClientRect();
-    if (rect.left < 0 || rect.right > window.innerWidth) {
-        activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'nearest' });
+bmwNext.addEventListener("click", () => {
+    if (bmwIndex < bmwSlides.length - 3) {
+        bmwIndex++;
+        bmwUpdateSlider();
     }
-}
+});
 
-// Thumbnail click event
-carThumbs.forEach((thumb, index) => {
-    thumb.addEventListener('click', () => {
-        carActiveIndex = index;
-        showCarSlide();
-    });
+bmwPrev.addEventListener("click", () => {
+    if (bmwIndex > 0) {
+        bmwIndex--;
+        bmwUpdateSlider();
+    }
+});
+
+// Swipe support for mobile
+let bmwStartX = 0;
+bmwTrack.addEventListener("touchstart", (e) => {
+    bmwStartX = e.touches[0].clientX;
+});
+
+bmwTrack.addEventListener("touchend", (e) => {
+    let bmwEndX = e.changedTouches[0].clientX;
+    if (bmwStartX - bmwEndX > 50 && bmwIndex < bmwSlides.length - 1) {
+        bmwIndex++;
+    } else if (bmwEndX - bmwStartX > 50 && bmwIndex > 0) {
+        bmwIndex--;
+    }
+    bmwUpdateSlider();
 });

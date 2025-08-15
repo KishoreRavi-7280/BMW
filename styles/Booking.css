@@ -1,0 +1,64 @@
+.bmw-slider-booking-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bmw-booking-form {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 320px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+.bmw-booking-form h3 {
+    margin-bottom: 15px;
+    color: hsl(24, 37%, 18%);
+}
+
+.bmw-booking-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.bmw-booking-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.bmw-booking-form button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background: hsl(24, 37%, 30%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.bmw-booking-form button:hover {
+    background: hsl(24, 37%, 20%);
+}
+
+/* Book Now Buttons inside Slider */
+.bmw-book-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: hsl(24, 37%, 30%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.bmw-book-btn:hover {
+    background: hsl(24, 37%, 20%);
+}
