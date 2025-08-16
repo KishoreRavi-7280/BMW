@@ -72,14 +72,48 @@ h2{
     border-bottom-right-radius: 0;
 }
 .blog-text{
-    width: 400px;
+  height: 20vh;
+  width: 40vh;
 }
-.blog-text h3{
-    padding: 10px;
-    color: rgb(63, 42, 29);
-    padding-bottom: 3px;
+.heading{
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
 }
-.blog-text p{
+.heading .year{
+  border: 2px dashed #0fa1ea;
+  border-radius: 8px;
+  padding: 3px 7px 3px 7px;
+  margin-top: 3px;
+  position: relative;
+  left: 30px;
+  
+}
+.heading .text{
+  text-align: center;
+  margin-top: 9px;
+  padding-left: .5rem;
+}
+.blog-text .car-list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 9px 35px;
+
+}
+.blog-text .car-card{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+}
+.blog-text .card-text{
+   color: hsl(219, 21%, 39%);
+  font-size: 0.875rem;
+
+}
+
+/* .blog-text p{
     padding: 10px;
 }
 .blog-text a{
@@ -87,7 +121,7 @@ h2{
     padding-bottom: 10px;
     color: black;
     font-weight: 600;
-}
+} */
 .social-icons {
    display: flex;
    justify-content: center;
